@@ -217,12 +217,12 @@ class Handlers
             oSession.responseCode = 304;
             oSession["ui-backcolor"] = "Lavender";
         }
-		
-		// GiStanki: Return a 500 error if the URI contains "/explore/querydata"
-		if (oSession.HTTPMethodIs("POST") && oSession.uriContains("/explore/querydata")) {
-			oSession.utilCreateResponseAndBypassServer();
-			oSession.responseCode = 500;
-		}
+
+        // Power BI GiStanki: Return a 500 error if the URI contains "/explore/querydata"
+        if (oSession.HTTPMethodIs("POST") && oSession.uriContains("/explore/querydata")) {
+            oSession.utilCreateResponseAndBypassServer();
+            oSession.responseCode = 500;
+        }
     }
 
     // This function is called immediately after a set of request headers has
